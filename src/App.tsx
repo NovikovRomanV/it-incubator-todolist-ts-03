@@ -20,6 +20,12 @@ function App() {
         setTasks(filteredTasks);
     }
 
+    function addTask(title: string) {
+        let task = {id: v1(), title: title, isDone: false};
+        let newTasks = [task, ...tasks];
+        setTasks(newTasks);
+    }
+
     let [filter, setFilter] = useState<FilterValuesType>("all");
 
     let tasksForTodolist = tasks;
@@ -46,11 +52,7 @@ function App() {
         </div>
     );
 
-    function addTask(title: string) {
-        let task = {id:"3", title: title, isDone: false};
-        let newTasks = [task, ...tasks];
-        setTasks(newTasks);
-    }
+
 }
 
 
